@@ -12,5 +12,7 @@ libraryDependencies ++= Seq(
   "mysql" % "mysql-connector-java" % "5.1.31",
   "com.typesafe.slick" %% "slick" % "2.1.0",
   "com.typesafe.play" %% "play-slick" % "0.8.1",
-  "org.slf4j" % "slf4j-nop" % "1.6.4"
+  "org.slf4j" % "slf4j-nop" % "1.6.4",
+  "org.scalatest" %% "scalatest" % "2.2.0" % "test",
+  "org.webjars" % "bootstrap" % "3.3.1" exclude("org.webjars", "jquery")
 )

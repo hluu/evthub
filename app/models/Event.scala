@@ -14,7 +14,6 @@ case class Event(id: Option[Long] = None, name: String, desc: String, startDate:
 
 object Event {
   val events = TableQuery[Events]
-  val url = "jdbc.mysql://localhost/evthub?user=evthub&password=evthub2015"
 
   def insert(event: Event)(implicit s: Session) {
     events.insert(event)
