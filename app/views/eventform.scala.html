@@ -1,0 +1,9 @@
+@(eventForm: Form[Event])
+
+@main("New Event") {
+
+    <h3>New Event</h3>
+	@helper.form(action = routes.Events.createEvent) {
+    	@helper.inputText(eventForm("name"))
+	}
+}

@@ -1,0 +1,13 @@
+@(elements: views.html.helper.FieldElements)
+
+@import views.html.helper._
+
+<div class="form-group @if(elements.hasErrors) {has-error}">
+    <label class="col-sm-3 control-label" for="@elements.id">@elements.label</label>
+    <div class="col-sm-8">
+        @elements.input
+        @if(elements.hasErrors) {
+        	<span id="inputError2Status" class="error">@elements.errors</span>
+        }        
+    </div>
+</div>

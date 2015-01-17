@@ -1,6 +1,6 @@
 package models
 
-import java.sql.Timestamp
+import java.sql.Date
 
 import scala.slick.lifted.TableQuery
 
@@ -9,8 +9,9 @@ import play.api.Play.current
 import play.api.db.slick.Config.driver.simple._
 import play.api.db.slick._
 
-case class Event(id: Option[Long] = None, name: String, desc: String, startDate: Timestamp,
-  endDate: Timestamp, category: String, submitter: String, tags: String)
+case class Event(id: Option[Long] = None, name: String, desc: String, startDate: Date,
+  endDate: Date, category: String, submitter: String, tags: String)
+
 
 object Event {
   val events = TableQuery[Events]
