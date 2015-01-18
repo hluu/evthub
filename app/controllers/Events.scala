@@ -21,12 +21,12 @@ object Events extends Controller {
   )(Event.apply)(Event.unapply))
   
   
- def newEventForm = Action {
+ def newEventForm = Action { implicit session => 
     Logger.info("*** Inside newEvent ****")
     Ok(views.html.eventform(eventForm))
  }
  
- def createEvent = Action {
+ def createEvent = Action { implicit session =>
    Ok(views.html.eventform(eventForm))
  }
 }

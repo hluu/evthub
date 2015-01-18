@@ -1,5 +1,5 @@
 @* list Template File *@
-@(loginForm: Form[controllers.Authentication.LoginInfo])
+@(loginForm: Form[controllers.Authentication.LoginInfo])(implicit session: Session, flash: Flash)
 
 @import views.html.helper._
 
@@ -22,7 +22,7 @@
         }
 
 		@inputText(loginForm("email"), '_label -> "Email", 'class-> "form-control", 'placeholder-> "email")
-		@inputText(loginForm("password"), '_label -> "Password", 'class-> "form-control", 'placeholder-> "password")
+		@inputPassword(loginForm("password"), '_label -> "Password", 'class-> "form-control", 'placeholder-> "password")
 	              
   
 		  <div class="form-group">

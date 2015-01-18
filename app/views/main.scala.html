@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String)(content: Html)(implicit session: play.api.mvc.Session, flash: Flash)
 
 <!DOCTYPE html>
 
@@ -51,12 +51,22 @@
 		     </form>
              <ul class="nav navbar-nav navbar-right">                                                 
               <li><a href="../navbar-static-top/">About</a></li>
-              <li><a href="../navbar-fixed-top/">Contact</a></li>
+              <li>
+              @if(session.get(Security.username)) {
+				  <a href="@routes.Authentication.logout">Logout</a>
+				} 
+			  </li>              
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
       <div class="container">
+        @if(flash.get("success")) {	
+		<div class="alert alert-success">
+		    <a href="#" class="close" data-dismiss="alert">&times;</a>
+		    @flash.get("success")
+		</div>
+		}
         @content
          
 	     <footer>
